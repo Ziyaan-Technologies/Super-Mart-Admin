@@ -1,0 +1,82 @@
+// Layout classes for the .acs-* grid system used inside AddNewClientStoreModal.
+// Reuses existing .ui-field, .ui-toggle-row, .ui-dropdown styles from _VAddClientForm.scss
+
+/* ── Form wrapper ── */
+.acs-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Grid helpers ── */
+.acs-grid {
+  display: grid;
+  gap: 16px;
+
+  &--4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Bottom row: image picker left, toggles right ── */
+.acs-bottom-row {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* ── Toggles section ── */
+.acs-toggles {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  min-width: 200px;
+}
+
+/* ── Filter section ── */
+.acs-filter-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+}
+
+.acs-filter-header {
+  font-size: 14px;
+  font-weight: 600;
+  color: #09090B;
+  margin-bottom: 4px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .acs-grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .acs-grid--3,
+  .acs-grid--2 {
+    grid-template-columns: 1fr;
+  }
+
+  .acs-bottom-row {
+    flex-direction: column;
+  }
+
+  .acs-toggles {
+    padding-top: 0;
+    width: 100%;
+  }
+}

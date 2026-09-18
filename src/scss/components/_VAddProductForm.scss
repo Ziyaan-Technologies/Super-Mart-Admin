@@ -1,0 +1,330 @@
+// Layout classes for the .ap-* grid system used inside AddNewProductModal.
+// Reuses existing .ui-field, .ui-toggle-row, .ui-dropdown styles from _VAddClientForm.scss
+
+/* ── Form wrapper ── */
+.ap-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Grid helpers ── */
+.ap-grid {
+  display: grid;
+  gap: 16px;
+
+  &--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &--1 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .ap-grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .ap-grid--3,
+  .ap-grid--2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Layout classes for the .aa-* grid system used inside AddNewAddonsModal.
+// Reuses existing .ui-field, .ui-dropdown styles from _VAddClientForm.scss
+
+/* ── Form wrapper ── */
+.aa-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Grid helpers ── */
+.aa-grid {
+  display: grid;
+  gap: 16px;
+
+  &--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &--1 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .aa-grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .aa-grid--3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Layout classes for the .ac-* grid system used inside AddNewAddonCategoryModal.
+// Reuses existing .ui-field, .ui-dropdown styles from _VAddClientForm.scss
+
+/* ── Form wrapper ── */
+.ac-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Grid helpers ── */
+.ac-grid {
+  display: grid;
+  gap: 16px;
+
+  &--4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &--1 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 1200px) {
+  .ac-grid--4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .ac-grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ac-grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .ac-grid--4,
+  .ac-grid--3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Layout classes for the .ai-* grid system used inside AddNewIngredientModal.
+// Reuses existing .ui-field, .ui-dropdown styles from _VAddClientForm.scss
+
+/* ── Form wrapper ── */
+.ai-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+} 
+
+/* ── Grid helpers ── */
+.ai-grid {
+  display: grid;
+  gap: 16px;
+
+  &--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .ai-grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .ai-grid--3,
+  .ai-grid--2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Layout classes for the .as-* grid system used inside AddNewSizeModal.
+// Reuses existing .ui-field, .ui-dropdown styles from _VAddClientForm.scss
+
+/* ── Form wrapper ── */
+.as-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Grid helpers ── */
+.as-grid {
+  display: grid;
+  gap: 16px;
+
+  &--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &--1 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .as-grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .as-grid--3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Layout classes for the .aa-* grid system used inside AddNewAreaModal.
+// Reuses existing .ui-field, .ui-dropdown styles from _VAddClientForm.scss
+
+/* ── Form wrapper ── */
+.aa-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Grid helpers ── */
+.aa-grid {
+  display: grid;
+  gap: 16px;
+
+  &--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── City Modal Grid helpers ── */
+.ac-grid {
+  display: grid;
+  gap: 16px;
+
+  &--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Form wrapper ── */
+.ac-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Country Modal Grid helpers ── */
+.an-grid {
+  display: grid;
+  gap: 16px;
+
+  &--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Form wrapper ── */
+.an-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Roles Modal Grid helpers ── */
+.ar-grid {
+  display: grid;
+  gap: 16px;
+
+  &--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Form wrapper ── */
+.ar-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Admin Modal Grid helpers ── */
+.aa-grid {
+  display: grid;
+  gap: 16px;
+
+  &--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &--1 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Form wrapper ── */
+.aa-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .aa-grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .aa-grid--3,
+  .aa-grid--2 {
+    grid-template-columns: 1fr;
+  }
+}

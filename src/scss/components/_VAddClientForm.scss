@@ -1,0 +1,168 @@
+// Layout classes for the .anc-* grid system used inside AddNewClientModal.
+// Also extends .ui-field with password-toggle support.
+
+/* ── Form wrapper ── */
+.anc-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Grid helpers ── */
+.anc-grid {
+  display: grid;
+  gap: 16px;
+
+  &--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  // Two equal columns (same as --2; alias for clarity in template)
+  &--2-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Bottom row: logo picker left, toggles right ── */
+.anc-bottom-row {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* ── Toggles grid: 2 columns ── */
+.anc-toggles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 32px;
+  align-content: start;
+  padding-top: 28px; // aligns with image picker body
+}
+
+/* ── Password field extensions ── */
+.ui-field__password-wrap {
+  position: relative;
+  width: 100%;
+
+  .ui-field__input {
+    padding-right: 40px;
+  }
+}
+
+.ui-field__eye {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #9CA3AF;
+  line-height: 1;
+  transition: color 0.15s;
+
+  &:hover {
+    color: #6B7280;
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgb(var(--v-theme-primary));
+    outline-offset: 2px;
+    border-radius: 3px;
+  }
+}
+
+/* ── UiToggleRow ── */
+.ui-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  white-space: nowrap;
+  
+}
+
+.ui-toggle-row__label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #09090B;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+// Remove extra margin Vuetify adds to v-switch inside toggle row
+.ui-toggle-row__switch {
+  margin: 0 !important;
+  padding: 0 !important;
+  flex-shrink: 0;
+
+  .v-selection-control {
+    min-height: unset !important;
+  }
+}
+
+/* ── UiFormActions ── */
+.ui-form-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ── Dropdown wrapper (v-select styled to match native input look) ── */
+.ui-dropdown {
+  .v-field {
+    border-radius: 8px;
+    font-size: 14px;
+  }
+
+  // Match the native input height used in UiTextfieldPrimary
+  .v-field__input {
+    min-height: 44px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .v-field__outline {
+    color: #D9D9D9;
+    --v-field-border-opacity: 1 !important;
+  }
+
+  .v-field--focused .v-field__outline {
+    color: rgb(var(--v-theme-primary));
+    --v-field-border-opacity: 1 !important;
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  .anc-grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+
+  .anc-grid--3,
+  .anc-grid--2,
+  .anc-grid--2-col {
+    grid-template-columns: 1fr;
+  }
+
+  .anc-bottom-row {
+    flex-direction: column;
+  }
+
+  .anc-toggles {
+    grid-template-columns: 1fr;
+    padding-top: 0;
+  }
+}

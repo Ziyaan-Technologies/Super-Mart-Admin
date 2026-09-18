@@ -1,0 +1,39 @@
+.v-btn-group .v-btn {
+    height: inherit !important;
+}
+
+.v-btn-group {
+    border-color: rgb(var(--v-theme-borderColor)) !important;
+}
+.v-btn{
+    text-transform: capitalize;
+    letter-spacing: 0;
+}
+.v-btn--elevated:hover{
+    box-shadow: none;
+}
+
+.ui-btn-cancel {
+    border: 1.5px solid #D0D5DD !important;
+    background-color: #ffffff !important;
+    color: #344054 !important;
+    font-weight: 500;
+    border-radius: 8px !important;
+    padding: 0 20px !important;
+    min-width: 90px;
+    box-shadow: none !important;
+}
+
+.ui-btn-submit {
+    background-color: rgb(var(--v-theme-primary)) !important;
+    color: #ffffff !important;
+    font-weight: 500;
+    border-radius: 8px !important;
+    padding: 0 20px !important;
+    min-width: 90px;
+    box-shadow: none !important;
+
+    &:hover {
+        background-color: rgba(var(--v-theme-primary), 0.88) !important;
+    }
+}
