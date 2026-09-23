@@ -46,6 +46,7 @@ watch(() => props.modelValue, async (open) => {
     vendor_id: data.vendor_id || null,
     store_name: data.store_name || '',
     store_code: data.store_code || '',
+    store_type: data.store_type || '',
     store_phone: data.store_phone || '',
     store_email: data.store_email || '',
     address: data.address || '',
@@ -113,6 +114,7 @@ function submit() {
         <UiSelectField v-if="showVendor && !isEdit" class="form-grid__full" title="Client" v-model="form.vendor_id" :items="vendors || []" item-title="business_name" :error="errors.vendor_id" />
         <UiTextfieldPrimary title="Store Name" v-model="form.store_name" :error="!!errors.store_name" :errorMessage="errors.store_name" />
         <UiTextfieldPrimary title="Store Code" v-model="form.store_code" placeholder="e.g. MAIN" :error="!!errors.store_code" :errorMessage="errors.store_code" />
+        <UiTextfieldPrimary title="Shop Type" v-model="form.store_type" placeholder="e.g. Big electric products" />
         <UiTextfieldPrimary title="Phone" v-model="form.store_phone" />
         <UiTextfieldPrimary title="Email" type="email" v-model="form.store_email" :error="!!errors.store_email" :errorMessage="errors.store_email" />
         <UiSelectField title="Country" v-model="form.country_id" :items="countries" :error="errors.country_id" />

@@ -20,7 +20,7 @@ const emit = defineEmits<{
   (e: 'submit', payload: Record<string, any>): void;
 }>();
 
-const businessTypes = ['Supermarket', 'Hypermarket', 'Grocery', 'Convenience Store', 'Pharmacy'].map((name) => ({ id: name, name }));
+const businessTypes = ['Supermarket', 'Hypermarket', 'Grocery', 'Convenience Store', 'Pharmacy', 'Electric Store'].map((name) => ({ id: name, name }));
 const isEdit = computed(() => !!props.data?.id);
 const form = ref<any>({});
 const logoFile = ref<File | null>(null);

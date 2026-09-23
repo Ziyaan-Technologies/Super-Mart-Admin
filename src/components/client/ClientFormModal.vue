@@ -35,9 +35,11 @@ const loadVendorData = async (vendorId: number | null) => {
     roles.value = [];
     return;
   }
+  const vendor = props.vendors.find((row: any) => row.id === vendorId);
+  const roleType = vendor?.business_type === 'Electric Store' ? 'Electric' : 'Vendor';
   const [storeResponse, roleResponse] = await Promise.all([
     axios.get('clientstores/list', { params: { vendor_id: vendorId } }),
-    axios.get('roles/list', { params: { type: 'Vendor', vendor_id: vendorId } }),
+    axios.get('roles/list', { params: { type: roleType, vendor_id: vendorId } }),
   ]);
   stores.value = storeResponse.data;
   roles.value = roleResponse.data;
