@@ -20,7 +20,12 @@
     }
     th.v-data-table__th {
         font-size:12px;
+        font-weight: 700 !important;
         color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
+
+        .v-data-table-header__content {
+            font-weight: 700 !important;
+        }
     }
     td.v-data-table__td {
         font-size: 11px;

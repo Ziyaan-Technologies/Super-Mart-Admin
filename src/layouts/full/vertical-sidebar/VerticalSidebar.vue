@@ -9,6 +9,7 @@ import NavCollapse from './NavCollapse/NavCollapse.vue'
 import { LayoutSidebarLeftCollapseIcon } from 'vue-tabler-icons'
 import type { menu } from './sidebarItem'
 import { filterMenuByAbility } from '@/utils/filterMenuByAbility'
+import ztLogo from '@/assets/images/logos/ziyaan-logo.png'
 
 const customizer = useCustomizerStore()
 const { mobile } = useDisplay()
@@ -42,8 +43,8 @@ const sidebarMenu = computed(() => {
     <perfect-scrollbar class="scrollnavbar">
       <div class="sidebar-brand d-flex align-center justify-space-between px-5 py-5">
         <RouterLink to="/" class="brand-logo">
-          <span class="mini-text">SUPER MART</span>
-          <span class="mini-icon brand-logo-mark">S</span>
+          <span class="mini-text">Ziyaan Technologies</span>
+          <img :src="ztLogo" alt="Ziyaan Technologies" class="mini-icon brand-logo-mark" />
         </RouterLink>
         <v-btn
           variant="text"

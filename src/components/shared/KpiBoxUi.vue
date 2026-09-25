@@ -48,7 +48,7 @@ const percentageIcon = computed(() => props.isPositive ? 'mdi-arrow-up' : 'mdi-a
           <v-icon :icon="icon" :color="color" size="24"></v-icon>
         </div>
         <div class="d-flex flex-column">
-          <p class="text-caption text-grey-darken-1 mb-1 kpi-card-title">{{ title }}</p>
+          <p class="text-caption text-grey-darken-1 font-weight-bold mb-1 kpi-card-title">{{ title }}</p>
           <h3 class="text-h5 font-weight-bold mb-0 kpi-card-value">{{ value }}</h3>
         </div>
       </div>
@@ -63,10 +63,10 @@ const percentageIcon = computed(() => props.isPositive ? 'mdi-arrow-up' : 'mdi-a
           class="text-caption font-weight-medium me-1"
           :class="isPositive ? 'text-success' : 'text-error'"
         >{{ percentage }}</span>
-        <span class="text-caption text-grey-darken-1">{{ comparisonText }}</span>
+        <span class="text-caption text-grey-darken-1 font-weight-bold">{{ comparisonText }}</span>
       </div>
       <div v-else-if="footerText" class="d-flex align-center">
-        <span class="text-caption text-grey-darken-1">{{ footerText }}</span>
+        <span class="text-caption text-grey-darken-1 font-weight-bold">{{ footerText }}</span>
       </div>
     </v-card-text>
   </VCard>

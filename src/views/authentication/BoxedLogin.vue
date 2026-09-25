@@ -1,415 +1,541 @@
 <script setup lang="ts">
 import LoginForm from '@/components/auth/LoginForm.vue';
-import Logo from '@/layouts/full/logo/LogoAuth.vue';
+import logo from '@/assets/images/logos/ziyaan-logo.png';
+
+const year = new Date().getFullYear();
 </script>
 
 <template>
-  <div class="premium-layout">
-    <div class="mobile-bg d-md-none"></div>
+  <div class="zt-login">
+    <!-- left: the brand -->
+    <aside class="zt-brandside">
+      <div class="zt-floor"></div>
+      <div class="zt-horizon"></div>
+      <div class="zt-rings">
+        <span class="zt-ring zt-ring--1"></span>
+        <span class="zt-ring zt-ring--2"></span>
+        <span class="zt-ring zt-ring--3"></span>
+      </div>
+      <div class="zt-scan"></div>
+      <div class="zt-sparks">
+        <i style="--x: 12%; --y: 22%; --d: 0s"></i>
+        <i style="--x: 78%; --y: 16%; --d: 1.2s"></i>
+        <i style="--x: 64%; --y: 68%; --d: 2.1s"></i>
+        <i style="--x: 28%; --y: 80%; --d: 3.4s"></i>
+        <i style="--x: 88%; --y: 47%; --d: 4.1s"></i>
+      </div>
 
-    <v-row class="ma-0 h-100vh w-100">
-      
-      <v-col cols="12" md="7" lg="7" class="d-none d-md-flex left-pane align-center justify-center pa-12 relative overflow-hidden">
-        
-        <div class="bg-noise"></div>
-        <div class="bg-grid"></div>
-        <div class="glow-orb orb-1"></div>
-        <div class="glow-orb orb-2"></div>
-        <div class="glow-orb orb-3"></div>
-
-        <div class="floating-cube f-cube-1"></div>
-        <div class="floating-cube f-cube-2"></div>
-        <div class="floating-cube f-cube-3"></div>
-
-        <div class="hero-content w-100 relative z-1" style="max-width: 800px; transform: scale(0.85); transform-origin: center;">
-          <div class="animate-fade-up" style="animation-delay: 0.1s;">
-            <h1 class="text-h2 font-weight-bold text-white mb-4 tracking-tight">Welcome Back</h1>
-            <p class="text-h6 text-white opacity-80 mb-10 font-weight-regular" style="line-height: 1.5; max-width: 480px;">
-              Manage clients, their stores, catalog and stock for every Super Mart business from one place.
-            </p>
-          </div>
-
-          <div class="dash-preview animate-slide-up relative" style="animation-delay: 0.3s;">
-            
-            <div class="d-flex align-center justify-space-between mb-6">
-              <div class="d-flex align-center gap-3">
-                <v-avatar color="rgba(255,255,255,0.15)" size="40" rounded="lg">
-                  <v-icon color="white">mdi-view-dashboard-outline</v-icon>
-                </v-avatar>
-                <div class="text-white text-subtitle-1 font-weight-bold">Platform Overview</div>
-              </div>
-              <div class="fake-tabs">
-                <div class="fake-tab active">Overview</div>
-                <div class="fake-tab">Stores</div>
-              </div>
-            </div>
-
-            <div class="kpi-grid mb-4">
-              <div class="kpi-card glass">
-                <div class="kpi-label">Active Clients</div>
-                <div class="kpi-value">148</div>
-                <div class="kpi-trend success"><v-icon size="12">mdi-arrow-up-right</v-icon> 12%</div>
-              </div>
-              <div class="kpi-card glass">
-                <div class="kpi-label">Stock Value</div>
-                <div class="kpi-value">Rs 42M</div>
-                <div class="kpi-trend success"><v-icon size="12">mdi-arrow-up-right</v-icon> 8.4%</div>
-              </div>
-              <div class="kpi-card glass">
-                <div class="kpi-label">Stores</div>
-                <div class="kpi-value">612</div>
-                <div class="kpi-trend success"><v-icon size="12">mdi-arrow-up-right</v-icon> 2.1%</div>
-              </div>
-              <div class="kpi-card glass">
-                <div class="kpi-label">Low Stock SKUs</div>
-                <div class="kpi-value">124</div>
-                <div class="kpi-trend warning"><v-icon size="12">mdi-alert-circle-outline</v-icon> Action</div>
-              </div>
-            </div>
-
-            <div class="bottom-grid">
-              
-              <div class="chart-card glass">
-                <div class="d-flex justify-space-between mb-4">
-                  <span class="text-caption text-white font-weight-bold">Stock Health</span>
-                  <span class="text-caption text-white opacity-60">Live</span>
-                </div>
-                
-                <div class="progress-item mb-3">
-                  <div class="d-flex justify-space-between text-caption text-white opacity-80 mb-1">
-                    <span>Main Branches</span><span>80%</span>
-                  </div>
-                  <v-progress-linear model-value="80" color="#7C5AF5" height="6" rounded></v-progress-linear>
-                </div>
-                
-                <div class="progress-item mb-3">
-                  <div class="d-flex justify-space-between text-caption text-white opacity-80 mb-1">
-                    <span>City Branches</span><span>45%</span>
-                  </div>
-                  <v-progress-linear model-value="45" color="#7C5AF5" height="6" rounded></v-progress-linear>
-                </div>
-
-                <div class="progress-item">
-                  <div class="d-flex justify-space-between text-caption text-white opacity-80 mb-1">
-                    <span>Express Stores</span><span>95%</span>
-                  </div>
-                  <v-progress-linear model-value="95" color="#00e676" height="6" rounded></v-progress-linear>
-                </div>
-              </div>
-
-              <div class="map-card glass d-flex align-center justify-center relative overflow-hidden">
-                <div class="map-pattern"></div>
-                <div class="map-pin pin-1"><div class="pulse"></div></div>
-                <div class="map-pin pin-2"><div class="pulse"></div></div>
-                <div class="map-pin pin-3"><div class="pulse"></div></div>
-                <div class="glass-pill absolute-bottom text-caption font-weight-bold text-white">Active Stores: 612</div>
-              </div>
-
-            </div>
-
-            <div class="float-card fc-1 glass animate-float">
-              <div class="d-flex align-center gap-3">
-                <v-avatar color="#00e676" size="32"><v-icon color="white" size="16">mdi-check</v-icon></v-avatar>
-                <div>
-                  <div class="text-white font-weight-bold text-body-2">98.9% Fill Rate</div>
-                  <div class="text-white opacity-60" style="font-size: 10px;">Last 30 days</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="float-card fc-2 glass animate-float-delayed">
-              <div class="d-flex align-center gap-3">
-                <v-avatar color="#FF3D00" size="32"><v-icon color="white" size="16">mdi-trending-up</v-icon></v-avatar>
-                <div>
-                  <div class="text-white font-weight-bold text-body-2">+128 Receipts</div>
-                  <div class="text-white opacity-60" style="font-size: 10px;">Posted today</div>
-                </div>
-              </div>
-            </div>
-
-          </div>
+      <header class="zt-mark">
+        <span class="zt-mark__halo"><img :src="logo" alt="Ziyaan Technologies" /></span>
+        <div>
+          <div class="zt-mark__name">Ziyaan Technologies</div>
+          <div class="zt-mark__meta">Software House · Est. 2024</div>
         </div>
-      </v-col>
+      </header>
 
-
-      <v-col cols="12" md="5" lg="5" class="d-flex align-center justify-center right-pane bg-right">
-        
-        <div class="right-glow d-none d-md-block"></div>
-
-        <div class="w-100 d-flex justify-center z-1 animate-fade-in" style="animation-delay: 0.2s;">
-          <v-card class="premium-login-card pa-8 pa-sm-12" width="100%" max-width="520" elevation="0">
-            
-            <div class="text-center mb-8">
-              <Logo class="mb-6" />
-              <h2 class="text-h3 font-weight-bold text-textPrimary mb-3 font-inter tracking-tight">Welcome Back</h2>
-              <p class="text-body-1 text-textSecondary font-weight-regular">
-                Sign in to the Super Mart admin panel.
-              </p>
-            </div>
-
-            <LoginForm />
-            
-          </v-card>
+      <div class="zt-statement">
+        <div class="zt-rule"></div>
+        <h1>Crafting<br />Digital Excellence</h1>
+        <p>
+          The control room for every business on the platform — their shops, catalogue,
+          counters and people, in one place.
+        </p>
+        <div class="zt-chips">
+          <span><i></i>Systems online</span>
+          <span><i></i>Encrypted session</span>
         </div>
+      </div>
 
-      </v-col>
-    </v-row>
+      <footer class="zt-foot">
+        <span>Quetta · Pakistan</span>
+        <span>ziyaantechnologies.com</span>
+      </footer>
+    </aside>
+
+    <!-- right: the form -->
+    <main class="zt-formside">
+      <div class="zt-formside__grid"></div>
+      <div class="zt-formside__glow"></div>
+      <div class="zt-formside__edge"></div>
+
+      <div class="zt-form">
+        <span class="zt-corner zt-corner--tl"></span>
+        <span class="zt-corner zt-corner--br"></span>
+        <img :src="logo" alt="Ziyaan Technologies" class="zt-form__mark" />
+        <h2 class="zt-form__title">Sign in</h2>
+        <p class="zt-form__text">Welcome back. Use your admin account.</p>
+
+        <LoginForm />
+
+        <p class="zt-form__foot">© {{ year }} Ziyaan Technologies</p>
+      </div>
+    </main>
   </div>
 </template>
 
 <style scoped lang="scss">
-.font-inter {
-  font-family: 'Inter', 'Plus Jakarta Sans', sans-serif !important;
-}
-.tracking-tight {
-  letter-spacing: -0.02em;
-}
-
-.premium-layout {
+.zt-login {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
   min-height: 100vh;
   background: #ffffff;
+}
+
+/* ---------- brand side ---------- */
+.zt-brandside {
   position: relative;
-}
-
-.bg-right {
-  background: #f8f9fa;  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 56px 64px;
   overflow: hidden;
+  color: #e8f1ff;
+  background: linear-gradient(155deg, #091026 0%, #050810 45%, #060d1f 100%);
 }
 
-.mobile-bg {
+/* perspective grid floor */
+.zt-floor {
   position: absolute;
-  top: 0;
+  left: -30%;
+  right: -30%;
+  bottom: 0;
+  height: 70%;
+  background-image:
+    linear-gradient(rgba(56, 189, 248, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.38) 1px, transparent 1px);
+  background-size: 58px 58px;
+  transform: perspective(620px) rotateX(70deg);
+  transform-origin: bottom center;
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.5) 45%, transparent 88%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.5) 45%, transparent 88%);
+  animation: zt-drift 12s linear infinite;
+}
+
+@keyframes zt-drift {
+  to {
+    background-position: 0 58px;
+  }
+}
+
+/* a glow where the grid meets the horizon */
+.zt-horizon {
+  position: absolute;
   left: 0;
+  right: 0;
+  bottom: 34%;
+  height: 160px;
+  background: radial-gradient(ellipse at center bottom, rgba(34, 211, 238, 0.22), transparent 70%);
+  pointer-events: none;
+}
+
+/* orbit rings behind the statement */
+.zt-rings {
+  position: absolute;
+  top: 46%;
+  right: -14%;
+  width: 640px;
+  height: 640px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.zt-ring {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  border-radius: 50%;
+  border: 1px solid rgba(125, 211, 252, 0.16);
+}
+
+.zt-ring--1 {
   width: 100%;
   height: 100%;
-  background: linear-gradient(145deg, #2E1465 0%, #4F2FB6 50%, #6D45E9 100%);
-  z-index: 0;
+  border-color: rgba(125, 211, 252, 0.1);
 }
 
-.left-pane {
-  background: linear-gradient(145deg, #2E1465 0%, #4F2FB6 50%, #6D45E9 100%);
-  border-right: 1px solid rgba(255,255,255,0.1);
+.zt-ring--2 {
+  width: 72%;
+  height: 72%;
+  border-style: dashed;
+  border-color: rgba(125, 211, 252, 0.16);
+  animation: zt-spin 46s linear infinite;
 }
 
-.bg-noise {
+.zt-ring--3 {
+  width: 44%;
+  height: 44%;
+  border-color: rgba(34, 211, 238, 0.35);
+  background: radial-gradient(circle at 35% 30%, rgba(34, 211, 238, 0.18), rgba(37, 99, 235, 0.08) 45%, transparent 68%);
+  box-shadow: 0 0 80px rgba(6, 182, 212, 0.22), 0 0 30px rgba(34, 211, 238, 0.25) inset;
+  animation: zt-breathe 7s ease-in-out infinite;
+}
+
+@keyframes zt-breathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+}
+
+@keyframes zt-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* a slow light sweep */
+.zt-scan {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  opacity: 0.04;
-  mix-blend-mode: overlay;
-  pointer-events: none;
+  top: -40%;
+  left: -60%;
+  width: 55%;
+  height: 190%;
+  background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.12), transparent);
+  transform: rotate(18deg);
+  animation: zt-sweep 9s ease-in-out infinite;
 }
 
-.bg-grid {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image: 
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
-  pointer-events: none;
+@keyframes zt-sweep {
+  0%, 100% {
+    transform: translateX(0) rotate(18deg);
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(320%) rotate(18deg);
+  }
 }
 
-.glow-orb {
+/* drifting points of light */
+.zt-sparks i {
   position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: 3px;
+  height: 3px;
   border-radius: 50%;
-  filter: blur(100px);
-  z-index: 0;
-}
-.orb-1 { width: 500px; height: 500px; background: rgba(124, 90, 245, 0.4); top: -10%; left: -10%; }
-.orb-2 { width: 600px; height: 600px; background: rgba(91, 61, 189, 0.5); bottom: -20%; right: -10%; }
-.orb-3 { width: 300px; height: 300px; background: rgba(0, 230, 118, 0.15); bottom: 30%; left: 10%; }
-
-.right-glow {
-  position: absolute;
-  top: -10%;
-  left: -20%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(91, 61, 189, 0.05) 0%, transparent 70%);
-  pointer-events: none;
+  background: #67e8f9;
+  box-shadow: 0 0 12px rgba(103, 232, 249, 0.9);
+  opacity: 0;
+  animation: zt-blink 6s ease-in-out infinite;
+  animation-delay: var(--d);
 }
 
-.floating-cube {
-  position: absolute;
-  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.02));
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 24px;
-  box-shadow: 0 16px 32px rgba(0,0,0,0.2), inset 2px 2px 10px rgba(255,255,255,0.1);
-  z-index: 0;
-  animation: slowFloat 8s ease-in-out infinite alternate;
-}
-.f-cube-1 { width: 120px; height: 120px; top: 15%; right: 10%; transform: rotate(15deg); }
-.f-cube-2 { width: 80px; height: 80px; bottom: 15%; left: 5%; transform: rotate(-25deg); animation-delay: -2s; }
-.f-cube-3 { width: 180px; height: 180px; bottom: -5%; right: 20%; transform: rotate(45deg); opacity: 0.3; animation-delay: -4s; border-radius: 40px; }
-
-@keyframes slowFloat {
-  0% { transform: translateY(0px) rotate(15deg); }
-  100% { transform: translateY(-30px) rotate(25deg); }
+@keyframes zt-blink {
+  0%, 100% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  50% {
+    opacity: 0.85;
+    transform: translateY(-6px);
+  }
 }
 
-.dash-preview {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(32px);
-  -webkit-backdrop-filter: blur(32px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  border-left: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 24px;
-  box-shadow: 0 32px 64px rgba(0,0,0,0.3), inset 0 0 20px rgba(255,255,255,0.02);
-  padding: 32px;
-}
-
-.fake-tabs {
+.zt-mark {
+  position: relative;
   display: flex;
-  background: rgba(0,0,0,0.2);
-  padding: 4px;
-  border-radius: 12px;
+  align-items: center;
+  gap: 14px;
 }
-.fake-tab {
-  padding: 6px 16px;
-  border-radius: 8px;
+
+.zt-mark__halo {
+  position: relative;
+  display: inline-flex;
+  padding: 3px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.7), rgba(59, 130, 246, 0.35), transparent 70%);
+  box-shadow: 0 0 34px rgba(6, 182, 212, 0.35);
+}
+
+.zt-mark img {
+  width: 52px;
+  height: 52px;
+  border-radius: 15px;
+  display: block;
+}
+
+.zt-mark__name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #ffffff;
+}
+
+.zt-mark__meta {
   font-size: 12px;
-  color: rgba(255,255,255,0.6);
-  font-weight: 500;
-}
-.fake-tab.active {
-  background: rgba(255,255,255,0.1);
-  color: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7f93ad;
+  margin-top: 3px;
 }
 
-.glass {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  padding: 16px;
+.zt-statement {
+  position: relative;
+  max-width: 520px;
+  padding-bottom: 24px;
 }
 
-.kpi-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-}
-.kpi-label { color: rgba(255,255,255,0.6); font-size: 11px; margin-bottom: 8px; font-weight: 500; }
-.kpi-value { color: #fff; font-size: 20px; font-weight: 800; margin-bottom: 8px; font-family: 'Inter', sans-serif; letter-spacing: -0.5px; }
-.kpi-trend { font-size: 11px; font-weight: 600; display: flex; align-items: center; gap: 4px; }
-.kpi-trend.success { color: #00e676; }
-.kpi-trend.warning { color: #FF9800; }
-
-.bottom-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+.zt-rule {
+  width: 54px;
+  height: 3px;
+  border-radius: 3px;
+  margin-bottom: 26px;
+  background: linear-gradient(90deg, #22d3ee, #3b82f6);
 }
 
-.map-card {
-  background: rgba(0,0,0,0.1) !important;
-  min-height: 140px;
+.zt-statement h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 50px;
+  line-height: 1.12;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  margin-bottom: 20px;
 }
-.map-pattern {
-  position: absolute;
-  width: 150%;
-  height: 150%;
-  background-image: radial-gradient(rgba(255,255,255,0.2) 1px, transparent 1px);
-  background-size: 10px 10px;
-  transform: rotate(15deg);
-  opacity: 0.5;
+
+.zt-statement p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #93a8c2;
+  max-width: 420px;
+  margin: 0;
 }
-.map-pin {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  background: #00e676;
+
+.zt-chips {
+  display: flex;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.zt-chips span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(125, 211, 252, 0.2);
+  background: rgba(8, 20, 40, 0.6);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #a7c4de;
+}
+
+.zt-chips i {
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  box-shadow: 0 0 10px #00e676;
-}
-.pin-1 { top: 30%; left: 40%; }
-.pin-2 { top: 60%; left: 70%; background: #7C5AF5; box-shadow: 0 0 10px #7C5AF5; }
-.pin-3 { top: 70%; left: 20%; }
-.pulse {
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  background: inherit;
-  border-radius: 50%;
-  top: -8px; left: -8px;
-  animation: pulseAnim 2s infinite;
-  opacity: 0.4;
-}
-@keyframes pulseAnim {
-  0% { transform: scale(0.5); opacity: 0.6; }
-  100% { transform: scale(2); opacity: 0; }
+  background: #22d3ee;
+  box-shadow: 0 0 10px #22d3ee;
+  animation: zt-pulse 2.4s ease-in-out infinite;
 }
 
-.glass-pill {
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(8px);
-  padding: 6px 16px;
-  border-radius: 20px;
-  bottom: 16px;
-  border: 1px solid rgba(255,255,255,0.1);
+@keyframes zt-pulse {
+  0%, 100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
-.float-card {
-  position: absolute;
-  padding: 12px 20px;
-  border-radius: 100px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.2);
+.zt-foot {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: #6c809b;
 }
-.fc-1 {
+
+/* ---------- form side ---------- */
+.zt-formside {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 32px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* faint technical grid */
+.zt-formside__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.075) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.075) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: radial-gradient(ellipse at 50% 45%, #000 20%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 45%, #000 20%, transparent 75%);
+}
+
+/* a cool light pooling behind the form */
+.zt-formside__glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 640px;
+  height: 640px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.1) 0%, rgba(59, 130, 246, 0.07) 38%, transparent 68%);
+  pointer-events: none;
+}
+
+/* the seam between the two sides */
+.zt-formside__edge {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, rgba(34, 211, 238, 0.55), rgba(37, 99, 235, 0.45), transparent);
+}
+
+.zt-form {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+}
+
+/* HUD brackets */
+.zt-corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+.zt-corner--tl {
+  top: -20px;
+  left: -24px;
+  border-top: 2px solid rgba(34, 211, 238, 0.65);
+  border-left: 2px solid rgba(34, 211, 238, 0.65);
+  border-top-left-radius: 6px;
+}
+
+.zt-corner--br {
+  right: -24px;
   bottom: -20px;
-  right: -30px;
-}
-.fc-2 {
-  top: 200px;
-  left: -40px;
+  border-bottom: 2px solid rgba(37, 99, 235, 0.5);
+  border-right: 2px solid rgba(37, 99, 235, 0.5);
+  border-bottom-right-radius: 6px;
 }
 
-.premium-login-card {
+.zt-form__mark {
+  display: none;
+  width: 52px;
+  height: 52px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.zt-form__title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.zt-form__text {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 26px;
+}
+
+.zt-form__foot {
+  margin-top: 26px;
+  text-align: center;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+@media (max-width: 1279px) {
+  .zt-brandside {
+    padding: 44px;
+  }
+
+  .zt-statement h1 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 960px) {
+  .zt-login {
+    grid-template-columns: 1fr;
+  }
+
+  .zt-brandside {
+    display: none;
+  }
+
+  .zt-form__mark {
+    display: block;
+  }
+}
+
+/* the shared form, tuned for a white panel */
+.zt-form :deep(.premium-form) {
+  margin-top: 0 !important;
+}
+
+.zt-form :deep(.input-group) {
+  margin-bottom: 18px !important;
+}
+
+.zt-form :deep(.v-label) {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em;
+  color: #334155 !important;
+  opacity: 1;
+}
+
+.zt-form :deep(.v-field) {
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+}
+
+.zt-form :deep(.v-field--focused) {
   background: #ffffff !important;
-  border-radius: 28px !important;
-  box-shadow: 0 32px 64px -12px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.02) !important;
-  z-index: 2;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12) !important;
 }
 
-.animate-fade-in {
-  opacity: 0;
-  animation: fadeIn 0.8s ease-out forwards;
-}
-.animate-fade-up {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.8s ease-out forwards;
-}
-.animate-slide-up {
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-.animate-float {
-  animation: float 6s ease-in-out infinite alternate;
-}
-.animate-float-delayed {
-  animation: float 7s ease-in-out infinite alternate-reverse;
+.zt-form :deep(.v-field__input),
+.zt-form :deep(input) {
+  color: #0f172a !important;
+  -webkit-text-fill-color: #0f172a !important;
+  caret-color: #0f172a;
+  min-height: 46px;
+  font-size: 14px;
 }
 
-@keyframes fadeIn {
-  to { opacity: 1; }
-}
-@keyframes fadeUp {
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes float {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-15px); }
+.zt-form :deep(input::placeholder) {
+  color: #94a3b8 !important;
+  opacity: 1;
 }
 
-.relative { position: relative; }
-.absolute-bottom { position: absolute; bottom: 0; }
-.z-1 { z-index: 1; }
+.zt-form :deep(button[type='submit']) {
+  height: 48px !important;
+  border-radius: 12px !important;
+  background: linear-gradient(120deg, #06b6d4 0%, #2563eb 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.25) !important;
+}
 </style>
