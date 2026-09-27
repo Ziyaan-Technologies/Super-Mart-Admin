@@ -48,6 +48,7 @@ watch(() => props.modelValue, async (open) => {
     store_code: data.store_code || '',
     store_type: data.store_type || '',
     store_phone: data.store_phone || '',
+    store_phones: Array.isArray(data.store_phones) ? [...data.store_phones] : [],
     store_email: data.store_email || '',
     address: data.address || '',
     lat: data.lat || '',
@@ -116,6 +117,11 @@ function submit() {
         <UiTextfieldPrimary title="Store Code" v-model="form.store_code" placeholder="e.g. MAIN" :error="!!errors.store_code" :errorMessage="errors.store_code" />
         <UiTextfieldPrimary title="Shop Type" v-model="form.store_type" placeholder="e.g. Big electric products" />
         <UiTextfieldPrimary title="Phone" v-model="form.store_phone" />
+        <div class="ui-field">
+          <label class="ui-field__label">Other numbers</label>
+          <v-combobox v-model="form.store_phones" multiple chips closable-chips clearable hide-details
+            placeholder="Type a number and press Enter" class="ui-dropdown" variant="outlined" density="comfortable" />
+        </div>
         <UiTextfieldPrimary title="Email" type="email" v-model="form.store_email" :error="!!errors.store_email" :errorMessage="errors.store_email" />
         <UiSelectField title="Country" v-model="form.country_id" :items="countries" :error="errors.country_id" />
         <UiSelectField title="City" v-model="form.city_id" :items="cities" :disabled="!form.country_id" :error="errors.city_id" />
