@@ -31,7 +31,7 @@ const formOpen = ref(false);
 const deleteOpen = ref(false);
 const saving = ref(false);
 const selected = ref<any>(null);
-const panels = [{ id: 'Admin', name: 'Admin panel' }, { id: 'Vendor', name: 'Store panel' }, { id: 'Electric', name: 'Electric Store panel' }];
+const panels = [{ id: 'Admin', name: 'Admin panel' }, { id: 'Vendor', name: 'Store panel' }, { id: 'Electric', name: 'Electric Store panel' }, { id: 'Bakery', name: 'Bakery panel' }];
 const form = ref<any>({ name: '', permission_key: '', module_name: '', type: 'Vendor' });
 const isEdit = computed(() => !!selected.value);
 
@@ -134,7 +134,7 @@ onMounted(async () => {
     page-context="permissions"
     search-text="Search name, key, module..."
     :module-options="modules"
-    :type-options="[{ label: 'Admin panel', value: 'Admin' }, { label: 'Store panel', value: 'Vendor' }, { label: 'Electric Store panel', value: 'Electric' }]"
+    :type-options="[{ label: 'Admin panel', value: 'Admin' }, { label: 'Store panel', value: 'Vendor' }, { label: 'Electric Store panel', value: 'Electric' }, { label: 'Bakery panel', value: 'Bakery' }]"
     @on-search="list.onSearch"
     @filter-change="list.onFilterChange"
   />
@@ -156,7 +156,7 @@ onMounted(async () => {
     >
       <template #item.permission_key="{ item }"><code>{{ item.permission_key }}</code></template>
       <template #item.type="{ item }">
-        <UiStatusChip :status="item.type === 'Admin' ? 'Admin panel' : item.type === 'Electric' ? 'Electric panel' : 'Store panel'" :variant="item.type === 'Admin' ? 'purple' : item.type === 'Electric' ? 'orange' : 'green'" />
+        <UiStatusChip :status="item.type === 'Admin' ? 'Admin panel' : item.type === 'Electric' ? 'Electric panel' : item.type === 'Bakery' ? 'Bakery panel' : 'Store panel'" :variant="item.type === 'Admin' ? 'purple' : item.type === 'Electric' ? 'orange' : item.type === 'Bakery' ? 'gray' : 'green'" />
       </template>
     </UiDataTable>
   </UiParentCard>
